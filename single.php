@@ -4,7 +4,7 @@
 
 	<?php global $vce_sidebar_opts; ?>
 	<?php if ( $vce_sidebar_opts['use_sidebar'] == 'left' ) { get_sidebar(); } ?>
-		
+
 	<div id="primary" class="vce-main-content">
 
 		<main id="main" class="main-box main-box-single">
@@ -28,6 +28,9 @@
 		<?php if(vce_get_option('show_related')) : ?>
 			<?php get_template_part('sections/related-box'); ?>
 		<?php endif; ?>
+
+        <!-- SEO Tags -->
+        <?php seoqueries_get_page_terms($plain_text = false); ?>
 
 		<?php if(vce_get_option('show_author_box') && vce_get_option('author_box_position') == 'down') : ?>
 			<?php get_template_part('sections/author-box'); ?>
